@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Course Material</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        p {
+            margin: 0 0 1em;
+        }
+        a {
+            color: #007BFF;
+        }
+        .quiz {
+            margin-top: 20px;
+        }
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+        .quiz-question p {
+            margin: 0 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Online Course</h1>
+        <p>Dear Students,</p>
+        <p>Welcome to our online course. This page contains the materials and resources you will need throughout the course. Please read through the sections carefully and reach out if you have any questions.</p>
+
+        <h2>Course Objectives</h2>
+        <p>By the end of this course, you will be able to:</p>
+        <ul>
+            <li>Understand the core principles of the subject.</li>
+            <li>Apply learned concepts to practical problems.</li>
+            <li>Analyze and evaluate different scenarios using the acquired knowledge.</li>
+        </ul>
+
+        <h2>Weekly Materials</h2>
+        <p>Below is a list of the weekly materials:</p>
+        <h3>Week 1: Introduction</h3>
+        <p>In this week, we will cover the basics and get to know each other.</p>
+        <ul>
+            <li><a href="#week1-reading">Reading Material</a></li>
+            <li><a href="#week1-lecture">Lecture Slides</a></li>
+            <li><a href="#week1-quiz">Quiz</a></li>
+        </ul>
+
+        <h3>Week 2: Advanced Topics</h3>
+        <p>This week, we delve deeper into more complex topics.</p>
+        <ul>
+            <li><a href="#week2-reading">Reading Material</a></li>
+            <li><a href="#week2-lecture">Lecture Slides</a></li>
+            <li><a href="#week2-quiz">Quiz</a></li>
+        </ul>
+
+        <h2>Assignments</h2>
+        <p>Assignments will be posted here each week. Please make sure to submit them by the deadline.</p>
+
+        <h2>Discussion Forum</h2>
+        <p>Join the discussion forum to interact with your peers and instructors. <a href="#discussion-forum">Click here</a> to participate.</p>
+
+        <h2>Contact</h2>
+        <p>If you have any questions, feel free to <a href="mailto:instructor@example.com">email the instructor</a>.</p>
+
+        <div class="quiz" id="week1-quiz">
+            <h2>Week 1 Quiz</h2>
+            <div class="quiz-question">
+                <p>Question 1: What is the capital of France?</p>
+                <input type="radio" name="q1" value="Paris"> Paris<br>
+                <input type="radio" name="q1" value="London"> London<br>
+                <input type="radio" name="q1" value="Berlin"> Berlin<br>
+            </div>
+            <div class="quiz-question">
+                <p>Question 2: What is 2 + 2?</p>
+                <input type="radio" name="q2" value="3"> 3<br>
+                <input type="radio" name="q2" value="4"> 4<br>
+                <input type="radio" name="q2" value="5"> 5<br>
+            </div>
+            <button onclick="gradeQuiz()">Submit Quiz</button>
+        </div>
+
+        <p>Happy learning!</p>
+        <p>Best regards,<br>Course Instructor</p>
+    </div>
+
+    <script>
+        function gradeQuiz() {
+            let score = 0;
+            const answers = {
+                q1: 'Paris',
+                q2: '4'
+            };
+            for (const [question, answer] of Object.entries(answers)) {
+                const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (userAnswer && userAnswer.value === answer) {
+                    score++;
+                }
+            }
+            alert(`Your score is ${score} out of ${Object.keys(answers).length}`);
+        }
+    </script>
+</body>
+</html>
